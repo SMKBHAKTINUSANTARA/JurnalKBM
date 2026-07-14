@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Pembelajaran - SMK BHAKTI NUSANTARA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            max-width: 90px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .text-two-columns .form-group {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .jam-select-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sub-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sub-label {
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-bottom: 2px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccd1d9;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        input[readonly] {
+            background-color: #e9ecef;
+            color: #495057;
+            cursor: not-allowed;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            border: 1px dashed #3498db;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #2ecc71;
+            color: White;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .btn-submit:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            body {
+                padding: 10px 5px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-wrapper">
+                <img src="https://yt3.ggpht.com/ytc/AAUvwniUSQRnlN1_XZykwzTPIvk7s5gAzv4_eAiWa61e=s900-c-k-c0x00ffffff-no-rj" alt="Logo SMK" class="logo">
+            </div>
+            <h1>Jurnal Pembelajaran - SMK BHAKTI NUSANTARA SALATIGA </h1>
+        </div>
+
+        <form id="jurnalForm">
+            <div class="form-row text-two-columns">
+                <div class="form-group">
+                    <label>⏰ Jam Pelajaran</label>
+                    <div class="jam-select-container">
+                        <div class="sub-group">
+                            <span class="sub-label">Dari Jam</span>
+                            <select name="jam_dari" required>
+                                <option value="">Pilih</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="sub-group">
+                            <span class="sub-label">Sampai Jam</span>
+                            <select name="jam_sampai" required>
+                                <option value="">Pilih</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>📅 Tanggal</label>
+                    <input type="text" id="tanggal-otomatis" name="tanggal" readonly placeholder="Memuat tanggal...">
+                </div>
+            </div>
+
+            <div class="form-row text-two-columns">
+                <div class="form-group">
+                    <label>🏫 Kelas</label>
+                    <select name="kelas" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="X AK">X AK</option>
+                        <option value="X FA 1">X FA 1</option>
+                        <option value="X FA 2">X FA 2</option>
+                        <option value="X KP 1">X KP 1</option>
+			<option value="X KP 2">X KP 2</option>
+			<option value="X KP 3">X KP 3</option>
+			<option value="X TSM 1">X TSM 1</option>
+			<option value="X TSM 2">X TSM 2</option>
+			<option value="X TSM 3">X TSM 3</option>
+			<option value="X TSM 4">X TSM 4</option>
+			<option value="XI AK">XI AK</option>
+                        <option value="XI FA 1">XI FA 1</option>
+                        <option value="XI FA 2">XI FA 2</option>
+			<option value="XI FA 3">XI FA 3</option>
+                        <option value="XI KP 1">XI KP 1</option>
+			<option value="XI KP 2">XI KP 2</option>
+			<option value="XI TSM 1">XI TSM 1</option>
+			<option value="XI TSM 2">XI TSM 2</option>
+                        <option value="XII FA">XII FA</option>
+                        <option value="XII KP 1">XII KP 1</option>
+			<option value="XII KP 2">XII KP 2</option>
+			<option value="XII PS">XII PS</option>
+			<option value="XII TSM">XII TSM</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🧑‍🏫 Guru</label>
+                    <select name="guru" required>
+                        <option value="">Pilih Guru</option>
+                        <option value="Ali Mahmudi, S.E.Sy., M.E., Gr.">aAli Mahmudi, S.E.Sy., M.E., Gr.</option>
+			<option value="apt. Ana Tianasari, S.Farm.">apt. Ana Tianasari, S.Farm.</option>
+                        <option value="apt. Dwi Astuti Oktalia, S.Farm., Gr.">apt. Dwi Astuti Oktalia, S.Farm., Gr.</option>
+			<option value="apt. Meilia Rofiana, S.Farm.">apt. Meilia Rofiana, S.Farm.</option>
+			<option value="Avinda Wicaksono, S.T., Gr.">Avinda Wicaksono, S.T., Gr.</option>
+			<option value="Ayu Anissa, S.Pd., Gr.">Ayu Anissa, S.Pd., Gr.</option>
+			<option value="Bagas Riantono, S.Pd., Gr.">Bagas Riantono, S.Pd., Gr.</option>
+			<option value="Danang Sigit Widianto, S.Pd., M.A., Gr.">Danang Sigit Widianto, S.Pd., M.A., Gr.</option>
+			<option value="Devi Ratnasari, S.Pd., Gr.">Devi Ratnasari, S.Pd., Gr.</option>
+			<option value="Dhystie Wulan Rhahmawati, S.Pd., Gr.">Dhystie Wulan Rhahmawati, S.Pd., Gr.</option>
+			<option value="Diah Ayu Kartikasari, M.Pd., Gr.">Diah Ayu Kartikasari, M.Pd., Gr.</option>
+			<option value="Dian Ananda Setyani, S.Pd.">Dian Ananda Setyani, S.Pd.</option>
+			<option value="Galih Yoga Prasetyo, S.Kep., Ns.">Galih Yoga Prasetyo, S.Kep., Ns.</option>
+			<option value="Luthfi Ghozali, S.Pd., Gr.">Luthfi Ghozali, S.Pd., Gr.</option>
+			<option value="Muchamad Ulinuha, S.Pd.">Muchamad Ulinuha, S.Pd.</option>
+			<option value="Muhamad Mufid, S.Pd.I., M.Pd., Gr.">Muhamad Mufid, S.Pd.I., M.Pd., Gr.</option>
+			<option value="Muhamad Wahyu Fatkur, S.Pd.">Muhamad Wahyu Fatkur, S.Pd.</option>
+			<option value="Muhammad Luthfi Setyawan, S.E., Gr.">Muhammad Luthfi Setyawan, S.E., Gr.</option>
+			<option value="Nurul Fitrianingsing, S.Pd.">Nurul Fitrianingsing, S.Pd.</option>
+			<option value="Putri Ratnasari, S.ST., Gr.">Putri Ratnasari, S.ST., Gr.</option>
+			<option value="Reni Setiawati, S.Pd.">Reni Setiawati, S.Pd.</option>
+			<option value="Roosita Aulia Ardia Modana, S.Pd., Gr.">Roosita Aulia Ardia Modana, S.Pd., Gr.</option>
+			<option value="Rudi Restanto, M.Pd., Gr.">Rudi Restanto, M.Pd., Gr.</option>
+			<option value="Rumsiyati, S.Kep., Ns.">Rumsiyati, S.Kep., Ns.</option>
+			<option value="Septi Naela Rohmah, S.Psi">Septi Naela Rohmah, S.Psi</option>
+			<option value="Septian Arga Rismawan, S.Pd.">Septian Arga Rismawan, S.Pd.</option>
+			<option value="Siti Mardiyah, S.Pd., Gr.">Siti Mardiyah, S.Pd., Gr.</option>
+			<option value="Taufiq Aryanto, S.Pd., Gr.">Taufiq Aryanto, S.Pd., Gr.</option>
+			<option value="Vina Fitriyana, S.Kep., Gr.">Vina Fitriyana, S.Kep., Gr.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📖 Mata Pelajaran</label>
+                <input type="text" name="mata_pelajaran" placeholder="Masukkan mata pelajaran" required>
+            </div>
+
+            <div class="form-group">
+                <label>📝 Materi Pembelajaran</label>
+                <textarea name="materi" rows="3" placeholder="Jelaskan materi yang diajarkan hari ini..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>📝 Siswa Tidak Hadir</label>
+                <textarea name="siswa_absen" rows="3" placeholder="contoh: Andi Saputra (S), Eko Patrio (I) dst ..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>📸 Foto Dokumentasi Kegiatan</label>
+                <input type="file" id="fotoInput" accept="image/*" capture="environment">
+                <small style="color: #7f8c8d; display: block; margin-top: 4px; font-size: 11px;">
+                    Ketuk untuk langsung mengambil foto melalui kamera HP Anda.
+                </small>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btnKirim">Kirim Jurnal</button>
+        </form>
+    </div>
+
+    <script>
+        function muatTanggalOtomatis() {
+            const hariIni = new Date();
+            const opsiFormat = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+            const tanggalRapi = hariIni.toLocaleDateString('id-ID', opsiFormat);
+            
+            const kotakTanggal = document.getElementById('tanggal-otomatis');
+            if (kotakTanggal) {
+                kotakTanggal.value = tanggalRapi;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', muatTanggalOtomatis);
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyQ4DScOV3FrleOtlMyqEL-UGNjW82-ZTtm5OIy5hcz0ae2i4LokHH_nd-8QU6Ky1DAIA/exec'; // <-- GANTI DENGAN URL WEB APP BARU LANGKAH 1
+        const form = document.getElementById('jurnalForm');
+        const btnKirim = document.getElementById('btnKirim');
+        const fotoInput = document.getElementById('fotoInput');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            btnKirim.disabled = true;
+            btnKirim.innerText = "Memproses & Mengirim data...";
+
+            // Membaca nilai elemen form secara manual untuk dibuat menjadi paket JSON padat
+            const dataObjek = {
+                jam_dari: form.elements['jam_dari'].value,
+                jam_sampai: form.elements['jam_sampai'].value,
+                tanggal: form.elements['tanggal'].value,
+                kelas: form.elements['kelas'].value,
+                guru: form.elements['guru'].value,
+                mata_pelajaran: form.elements['mata_pelajaran'].value,
+                materi: form.elements['materi'].value,
+                siswa_absen: form.elements['siswa_absen'].value,
+                foto_base64: ""
+            };
+
+            const file = fotoInput.files[0];
+
+            const kirimPaketJSON = (payload) => {
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(payload) // Mengirim sebagai string JSON murni agar kebal error payload
+                })
+                .then(response => {
+                    alert('Jurnal dan Foto berhasil dikirim secara real-time!');
+                    form.reset();
+                    muatTanggalOtomatis();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('Gagal mengirim data. Silakan periksa jaringan Anda.');
+                })
+                .finally(() => {
+                    btnKirim.disabled = false;
+                    btnKirim.innerText = "Kirim Jurnal";
+                });
+            };
+
+            if (file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function () {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Kompresi resolusi maksimal ke 400px agar efisien di sel tabel
+                        const MAX_WIDTH = 400;
+                        const MAX_HEIGHT = 400;
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Kompresi kualitas gambar 50%
+                        dataObjek.foto_base64 = canvas.toDataURL('image/jpeg', 0.5);
+                        kirimPaketJSON(dataObjek);
+                    };
+                };
+            } else {
+                kirimPaketJSON(dataObjek);
+            }
+        });
+    </script>
+</body>
+</html>
